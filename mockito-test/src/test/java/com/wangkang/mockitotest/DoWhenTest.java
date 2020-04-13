@@ -28,13 +28,13 @@ public class DoWhenTest {
     List<String> list;
     @Test
     public void doReturnTest() {
-        doReturn("return").when(list).get(anyInt());
-        assert "return".equals(list.get(-1));
+        doReturn("123").when(list).get(anyInt());
         doReturn("first","second","third").when(list).get(-1);
 
+        assert "123".equals(list.get(-1));
         //后面声明的会覆盖前面声明的桩
         assert "first".equals(list.get(-1));
-        assert "return".equals(list.get(-2));
+        assert "123".equals(list.get(-2));
         assert "second".equals(list.get(-1));
         assert "third".equals(list.get(-1));
         assert "third".equals(list.get(-1));

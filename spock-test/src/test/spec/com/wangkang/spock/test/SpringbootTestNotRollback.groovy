@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Import
 import org.springframework.test.annotation.Rollback
 import org.springframework.transaction.annotation.EnableTransactionManagement
 import org.springframework.transaction.annotation.Transactional
+import spock.lang.Ignore
 import spock.lang.Specification
 
 /**
@@ -20,11 +21,11 @@ import spock.lang.Specification
  * @since
  */
 @SpringBootTest(classes = SpringbootTest)
+@Ignore
 class SpringbootTestNotRollback extends Specification {
 
     @Autowired
     UserMapper mapper
-
     def "mapper 层测试"() {
         expect:
         mapper.addUser("1", 1)

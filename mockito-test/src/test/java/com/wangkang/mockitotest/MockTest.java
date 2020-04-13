@@ -1,6 +1,7 @@
 package com.wangkang.mockitotest;
 
 import com.wangkang.mockitotest.HttpRequesterWithHeaders.HttpBuilder;
+import com.wangkang.mockitotest.entity.DeepInner;
 import com.wangkang.mockitotest.entity.DeepOut;
 import com.wangkang.mockitotest.entity.RealMethodMock;
 import com.wangkang.mockitotest.entity.User;
@@ -9,6 +10,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -28,7 +30,7 @@ public class MockTest {
 
     @Test
     public void test() {
-        List<User> mockedList = mock(LinkedList.class);//可以mock具体类，建议
+        List<User> mockedList = mock(ArrayList.class);//可以mock具体类，建议
         assert mockedList.get(0) == null;
         mockedList = mock(LinkedList.class, RETURNS_DEFAULTS);
         assert mockedList.get(0) == null;

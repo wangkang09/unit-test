@@ -17,6 +17,7 @@
     <modules>
         <module>mockito-test</module>
         <module>spock-test</module>
+        <module>power-mockito-test</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

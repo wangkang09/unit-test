@@ -1,15 +1,7 @@
 package com.wangkang.spock
 
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.mockito.InjectMocks
-import org.mockito.Mock
-import org.mockito.junit.MockitoJUnitRunner
 import org.spockframework.runtime.ConditionFailedWithExceptionError
 import spock.lang.Specification
-
-import static org.mockito.ArgumentMatchers.any
-import static org.mockito.Mockito.doReturn
 
 /**
  * @author wangkang

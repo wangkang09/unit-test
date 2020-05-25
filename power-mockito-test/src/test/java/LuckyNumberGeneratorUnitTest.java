@@ -8,7 +8,7 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.any;
 import static org.powermock.api.mockito.PowerMockito.*;
 
 /**
@@ -30,13 +30,12 @@ public class LuckyNumberGeneratorUnitTest {
         assert luckyNumberGenerator != null;
 
         LuckyNumberGenerator mock = spy(new LuckyNumberGenerator());
-        when(mock, "getDefaultLuckyNumber").thenReturn(300);
+        doReturn(300).when(mock,"getDefaultLuckyNumber");
         int result = mock.getLuckyNumber(null);
         assertEquals(300, result);
-
         //mock 模式也行
         mock = mock(LuckyNumberGenerator.class, InvocationOnMock::callRealMethod);
-        when(mock, "getDefaultLuckyNumber").thenReturn(301);
+        doReturn(301).when(mock,"getDefaultLuckyNumber");
         assertEquals(301, mock.getLuckyNumber(null));
     }
 
@@ -46,7 +45,7 @@ public class LuckyNumberGeneratorUnitTest {
     @Test
     public final void givenPrivateMethodWithArgumentAndReturn_whenUsingPowerMockito_thenCorrect() throws Exception {
         LuckyNumberGenerator mock = spy(new LuckyNumberGenerator());
-        when(mock, "getComputedLuckyNumber", anyInt()).thenReturn(1);
+        doReturn(1).when(mock, "getComputedLuckyNumber", any());
         int result = mock.getLuckyNumber("Jack");
         assertEquals(1, result);
 

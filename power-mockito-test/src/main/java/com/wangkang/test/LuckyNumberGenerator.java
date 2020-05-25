@@ -25,7 +25,7 @@ public class LuckyNumberGenerator {
         return 100;
     }
 
-    private int getComputedLuckyNumber(int length) {
+    private int getComputedLuckyNumber(Integer length) {
         return length < 5 ? 5 : 10000;
     }
 }

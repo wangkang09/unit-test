@@ -31,7 +31,7 @@ public class DoWhenTest {
         doReturn("123").when(list).get(anyInt());
         doReturn("first","second","third").when(list).get(-1);
 
-        assert "123".equals(list.get(-1));
+        assert "123".equals(list.get(-11));
         //后面声明的会覆盖前面声明的桩
         assert "first".equals(list.get(-1));
         assert "123".equals(list.get(-2));

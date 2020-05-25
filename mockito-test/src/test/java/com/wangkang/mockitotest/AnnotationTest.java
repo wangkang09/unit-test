@@ -71,7 +71,7 @@ public class AnnotationTest {
             mockedListSMART.get(0).getAge();
             Assert.fail();
         } catch (Exception e) {
-            assert e.getMessage().contains("cannot be cast to class com.wangkang.mockitotest.entity.User");
+            assert e.getMessage().contains("cannot be cast to com.wangkang.mockitotest.entity.User");
         }
 
         log.info("-------------------------------> RETURNS_MOCKS 方法如果是引用对象返回 mock，如果是 primitive 返回 java 默认值，如果是 final 返回 null");
